@@ -6,12 +6,12 @@ resource "aws_security_group" "aj_sg" {
     to_port     = 22
     from_port   = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = [var.all_traffic_cidr]
   }
   egress {
     to_port     = 0
     from_port   = 0
     protocol    = -1
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = [var.all_traffic_cidr]
   }
 }

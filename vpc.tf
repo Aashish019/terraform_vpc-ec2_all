@@ -70,14 +70,14 @@ resource "aws_internet_gateway" "aj_igw" {
 resource "aws_route" "aj_route_pub" {
   route_table_id         = aws_route_table.aj_route_table_pub.id
   gateway_id             = aws_internet_gateway.aj_igw.id
-  destination_cidr_block = "0.0.0.0/0"
+  destination_cidr_block = var.all_traffic_cidr
 }
 
 #pvt route rule
 resource "aws_route" "aj_route_pvt" {
   route_table_id = aws_route_table.aj_route_table_pvt.id
   # gateway_id             = aws_nat_gateway.aj_nategateway.id
-  destination_cidr_block = "0.0.0.0/0"
+  destination_cidr_block = var.all_traffic_cidr
   nat_gateway_id         = aws_nat_gateway.aj_nategateway.id
 }
 
