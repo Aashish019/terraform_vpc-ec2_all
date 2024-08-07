@@ -1,20 +1,20 @@
 variable "ami_name" {
   description = "ami id for the image"
   type        = string
-  default     = "ami-0ba9883b710b05ac6"
+
 }
 
 variable "ec2_type" {
   description = "ec2 instance type"
   type        = string
-  default     = "t2.micro"
+
 
 }
 
 variable "ec2_key_name" {
   description = "ec2 key name"
   type        = string
-  default     = "next"
+
 
 }
 
